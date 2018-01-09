@@ -1,7 +1,7 @@
 import React from 'react'
-import { Router, Link } from 'react-static'
+import { Router } from 'react-static'
 import styled, { injectGlobal } from 'styled-components'
-//
+import 'normalize.css'
 import Routes from 'react-static-routes'
 
 injectGlobal`
@@ -12,47 +12,27 @@ injectGlobal`
     font-size: 16px;
     margin: 0;
     padding: 0;
+    color: #555;
   }
 `
 
-const AppStyles = styled.div`
-  a {
-    text-decoration: none;
-    color: #108db8;
-    font-weight: bold;
-  }
-
-  nav {
-    width: 100%;
-    background: #108db8;
-
-    a {
-      color: white;
-      padding: 1rem;
-      display: inline-block;
-    }
-  }
-
-  .content {
-    padding: 1rem;
-  }
-
-  img {
-    max-width: 100%;
-  }
+const Header = styled.header`
+  background: #4bf;
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+`
+const Container = styled.div`
+  padding: 0.5rem;
 `
 
 export default () => (
   <Router>
-    <AppStyles>
-      <nav>
-        <Link to="/">Home</Link>
-        <Link to="/about">About</Link>
-        <Link to="/blog">Blog</Link>
-      </nav>
-      <div className="content">
+    <div>
+      <Header>Just a typical voting app</Header>
+      <Container>
         <Routes />
-      </div>
-    </AppStyles>
+      </Container>
+    </div>
   </Router>
 )
