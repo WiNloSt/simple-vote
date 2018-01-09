@@ -13,6 +13,12 @@ injectGlobal`
     margin: 0;
     padding: 0;
     color: #555;
+    min-width: 300px;
+  }
+
+  ::-webkit-scrollbar {
+    width: 0px;
+    background: transparent; /* make scrollbar transparent */
   }
 `
 

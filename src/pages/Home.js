@@ -4,25 +4,24 @@ import styled from 'styled-components'
 import { Card } from '../components/Card'
 
 const Center = styled.div`
-  width: 100%;
   height: 100%;
-  text-align: center;
-  vertical-align: middle;
+  display: flex;
+  align-items: center;
+`
 
-  &:before {
-    content: '';
-    display: inline-block;
-    height: 100%;
-    vertical-align: middle;
-  }
-
-  & > * {
-    vertical-align: middle;
-  }
+const Carousel = styled.div`
+  overflow: scroll;
+  display: inline-block;
+  white-space: nowrap;
+  width: 100%;
 `
 
 export default () => (
   <Center>
-    <Card />
+    <Carousel>
+      <Card />
+      <Card />
+      <Card />
+    </Carousel>
   </Center>
 )
