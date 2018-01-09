@@ -17,19 +17,29 @@ injectGlobal`
 `
 
 const Header = styled.header`
+  position: absolute;
+  width: 100%;
+  height: 3rem;
   background: #4bf;
   color: #fff;
-  text-align: center;
-  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `
 const Container = styled.div`
+  position: relative;
+  height: 100vh;
+  box-sizing: border-box;
   padding: 0.5rem;
+  padding-top: 4rem;
 `
 
 export default () => (
   <Router>
     <div>
-      <Header>Just a typical voting app</Header>
+      <Header>
+        <span>Just a typical voting app</span>
+      </Header>
       <Container>
         <Routes />
       </Container>
