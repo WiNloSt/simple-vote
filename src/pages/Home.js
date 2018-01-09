@@ -7,6 +7,7 @@ const Center = styled.div`
   height: 100%;
   display: flex;
   align-items: center;
+  justify-content: center;
 `
 
 const Carousel = styled.div`
@@ -14,6 +15,7 @@ const Carousel = styled.div`
   display: inline-block;
   white-space: nowrap;
   width: 100%;
+  text-align: center;
 `
 
 export default () => (
