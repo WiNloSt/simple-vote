@@ -42,7 +42,7 @@ const Container = styled.div`
 
 export default () => (
   <Router>
-    <div>
+    <div style={{ overflow: 'hidden' }}>
       <Header>
         <span>Just a typical voting app</span>
       </Header>
