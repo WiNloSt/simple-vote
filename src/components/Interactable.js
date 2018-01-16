@@ -1,6 +1,16 @@
 import React from 'react'
 
 export class Interactable extends React.Component {
+  componentDidMount () {
+    window.addEventListener('mouseup', this.onMouseUp)
+    window.addEventListener('mousemove', this.onMouseMove)
+  }
+
+  componentWillUnmount () {
+    window.removeEventListener('mouseup', this.onMouseUp)
+    window.removeEventListener('mousemove', this.onMouseMove)
+  }
+
   onMouseDown = e => {
     this.isInputDown = true
     this.initialX = e.clientX
@@ -46,11 +56,9 @@ export class Interactable extends React.Component {
   render () {
     const listeners = {
       onMouseDown: this.onMouseDown,
-      onMouseUp: this.onMouseUp,
       onTouchStart: this.onTouchStart,
       onTouchEnd: this.onTouchEnd,
       onTouchMove: this.onTouchMove,
-      onMouseMove: this.onMouseMove,
     }
 
     return React.cloneElement(React.Children.only(this.props.children), listeners)
