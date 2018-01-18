@@ -15,6 +15,7 @@ export class Interactable extends React.Component {
     this.isInputDown = true
     this.initialX = e.clientX
     this.initialY = e.clientY
+    this.props.onInputDown && this.props.onInputDown()
   }
 
   onMouseUp = () => {
@@ -25,6 +26,7 @@ export class Interactable extends React.Component {
   onTouchStart = e => {
     this.initialX = e.touches[0].clientX
     this.initialY = e.touches[0].clientY
+    this.props.onInputDown && this.props.onInputDown()
   }
 
   onTouchEnd = () => {
